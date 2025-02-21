@@ -1,0 +1,40 @@
+	NLIST
+*   system IO definitions	
+* -----SCC2691 UART-----
+* I have 100's of 'em....
+MR   	 EQU	0	Mode register
+SR   	 EQU	2	Status
+CSR  	 EQU	2
+BRG  	 EQU	4
+CR   	 EQU	4
+RHR  	 EQU    6
+THR  	 EQU	6
+T16X 	 EQU	8
+ACR  	 EQU	8
+IR   	 EQU	10
+CTU  	 EQU	12
+CTL  	 EQU	14
+
+* -----DS2416 Led text display----
+* easy to interface but will be gone in V2
+dsp_A	 EQU    0x66
+dsp_B	 EQU    0x62
+dsp_C	 EQU    0x64
+dsp_D	 EQU    0x60
+dsp_E	 EQU    0x6E
+dsp_F	 EQU    0x6A
+dsp_G	 EQU    0x6C
+dsp_H	 EQU    0x68
+
+*  -- IDE  disk Drive
+*  Need some storage, is a DOM device
+AT_DAT 	EQU  0x70
+AT_ERR	EQU  0x72
+AT_SCNT	EQU  0x74
+AT_SNR	EQU  0x76
+AT_CYL	EQU  0x78
+AT_CYH	EQU  0x7A
+AT_HDS	EQU  0x7C
+AT_CMD	EQU  0x7E
+	
+	EOF	

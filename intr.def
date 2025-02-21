@@ -1,0 +1,85 @@
+	AORG 	0
+* vectors 0-9
+	DATA	PWRON,PWRON 
+	DATA	LKMVEC
+	DATA    INT2VC
+	DATA    INT3VC
+	DATA	'TEXT'
+	
+* Reserve space for interrupt vectors
+	DATA 	UNKINF
+	DATA 	UNKINB,UNKINC,UNKIND,UNKINE,UNKINA
+* 10-19	
+	DATA 	UNKIN1,UNKIN1,UNKIN1,UNKIN1,UNKIN1
+	DATA 	UNKIN1,UNKIN1,UNKIN1,UNKIN1,UNKIN1
+	NLIST
+* 20-29	
+	DATA 	UNKIN2,UNKIN2,UNKIN2,UNKIN2,UNKIN2
+	DATA 	UNKIN2,UNKIN2,UNKIN2,UNKIN2,UNKIN2
+* 30-39	
+	DATA 	UNKIN3,UNKIN3,UNKIN3,UNKIN3,UNKIN3
+	DATA 	UNKIN3,UNKIN3,UNKIN3,UNKIN3,UNKIN3
+* 40-49	
+	DATA 	UNKINT,UNKINT,UNKINT,UNKINT,UNKINT
+	DATA 	UNKINT,UNKINT,UNKINT,UNKINT,UNKINT
+* 50-59	
+	DATA 	UNKIN5,UNKIN5,UNKIN5,UNKIN5,UNKIN5
+	DATA 	UNKIN5,UNKIN5,UNKIN5,UNKIN5,UNKIN5
+* 60-61	
+	DATA 	UNKIN6,UNKIN6
+* Trap for string instructions
+	DATA 	STRTRP
+* Trap for illegal instructions
+	DATA 	ILLTRP
+*
+* End of interrupt vector definitions
+*================================================
+* unknown interrupts
+*
+UNKINT 	LDK A7,'X'
+	OTR A7,1,dsp_E
+	HLT
+UNKINA  LDK A7,'A'
+	OTR A7,1,dsp_E
+	HLT
+UNKINB  LDK A7,'B'
+	OTR A7,1,dsp_E
+	HLT
+UNKINC  LDK A7,'C'
+	OTR A7,1,dsp_E
+	HLT
+UNKIND  LDK A7,'D'
+	OTR A7,1,dsp_E
+	HLT
+UNKINE  LDK A7,'E'
+	OTR A7,1,dsp_E
+	HLT
+UNKINF  LDK A7,'F'
+	OTR A7,1,dsp_E
+	HLT
+UNKIN1  LDK A7,'1'
+	OTR A7,1,dsp_E
+	HLT	
+UNKIN2  LDK A7,'2'
+	OTR A7,1,dsp_E
+	HLT
+UNKIN3  LDK A7,'3'
+	OTR A7,1,dsp_E
+	HLT
+UNKIN5  LDK A7,'5'
+	OTR A7,1,dsp_E
+	HLT
+UNKIN6  LDK A7,'6'
+	OTR A7,1,dsp_E
+	HLT
+UKT_T	DATA 'UNKN INT'
+* Illegal or forbidden instruktion
+ILLTRP
+ILL_T	DATA 'ILL_TRAP',0
+* 
+* string instruction encountered, only available
+* on last gen 2901-based P854 or P859 machines
+STRTRP 
+STR_T	DATA 'STRI_INS',0 
+*
+	EOF
