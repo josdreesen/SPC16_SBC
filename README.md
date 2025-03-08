@@ -2,7 +2,7 @@
 A single board computer based on the elusive Philips/Signetics SPC16/10 microprocessor.
 
 Target of this project is to document the obscure SPC16/10 microprocessor.
-This is done both by document the chip itself and designen a single board computer around this processor.
+This is done both by documenting the chip itself and design a single board computer around this processor.
 
 This processor is a single-chip variant of the Philips P851 minicomputer. 
 It dates around the 1982 timeframe.
