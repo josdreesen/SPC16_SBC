@@ -47,10 +47,10 @@ struct VARIAB { char name[WRDL]; unsigned int val; bool islbl; bool isglob; bool
 FILE *asm_ipf, *inc_file, *act_file;
 unsigned short  VariCnt=0; // Label count
 unsigned short  LinCnt=0,LinCntSave; // Line counter
-unsigned short  Pc=0, From=0;     // Program Counter
+unsigned short  Pc=0, From=0;        // Program Counter
 char            ProjName[20];
 bool            ProjDefined=false;
-bool            List;   // List program on/off
+bool            List;                // List program on/off
 short int       Pass;
 bool 		End=false, HasGlobals=false;
 
@@ -147,7 +147,7 @@ unsigned short LookupCc(char *cc)
  if (cc[0]=='U')  return(res+3);
 }
 
-/* aad a  labelvariable to Variables  */
+/* add a  labelvariable to Variables  */
 void AddLbl(char *varname, unsigned int val, bool islbl, bool global, bool isdef)
 { int idx;
  if ((idx=LookupVar(varname))!=-1)
@@ -486,7 +486,7 @@ for (i=0;i<3;i++)
   	  	     rv=rv>>1;
   	  	     para=rv<<8;   break;                   // r3
   	 case 'M'  : sec  = reader(x);              break;  // Memory address
-  	 case 'N'  : para = (reader(x) & 0X0F) <<8; break;  // 4 bit number
+  	 case 'N'  : para = (reader(x) & 0X0F) <<7; break;  // 4 bit number
   	 case 'S'  : para = (reader(x) & 0X01F);    break;  // number of bits to shift
   	 case 'X'  : para = reader(x) & 0x3F;       break;  // Device IO address
   	 case 'K'  : para = reader(x) & 0xFF;       break;  // 8 bit constant

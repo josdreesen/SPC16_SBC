@@ -213,7 +213,7 @@ struct registers  { char name[8];} regs [NR_REGS] = {
 "A6",
 "A14",
 "A7", // User stack ( suggested )
-"A15"  // System stack
+"A15",   // System stack
 // Repeat registerset with new names for UCSD project.
 // ONLY used for the UCSD Pascal
 "A0",
