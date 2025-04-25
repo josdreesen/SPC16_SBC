@@ -291,7 +291,8 @@ void WriteIhx(unsigned int from, unsigned int to, bool seyon  )
            ihcrc=ihcrc+(wrd&0xff)+(wrd>>8);   
            ihcnt=ihcnt+2;
            if (ihcnt==ihx_len)
-              { fprintf(ihx_file,"%2.2X\n",((~ihcrc)&0xFF)+1);
+              { 
+                fprintf(ihx_file,"%2.2X\n",((~ihcrc)+1)&0xFF); 
                 ihcnt=0;
                 }
              }
